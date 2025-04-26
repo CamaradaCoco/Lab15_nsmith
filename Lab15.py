@@ -30,8 +30,13 @@ def plot_fermat_spiral(a, theta):
 
 def main():
     """Main function to run the program."""
-    a, theta = input_values()
-    a = float(a)
+    try:
+        a, theta = input_values()
+        a = float(a)
+    except ValueError:
+        print("Invalid input. Please enter a valid number for 'a'.")
+        return
+
     plot_fermat_spiral(a, theta)
 
 main()
